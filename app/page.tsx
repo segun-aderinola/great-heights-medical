@@ -5,7 +5,7 @@ import { AboutSection } from "@/components/about-section"
 import { ServicesSection } from "@/components/services-section"
 import { ProcessSection } from "@/components/process-section"
 import { CoreValuesSection } from "@/components/core-values-section"
-import CTASection from "@/components/cta-section"
+import {CTASection} from "@/components/cta-section"
 import { Footer } from "@/components/footer"
 
 export default function HomePage() {

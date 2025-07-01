@@ -1,8 +1,31 @@
+"use client"
+
 import { Button } from "@/components/ui/button"
 import { Calendar } from "lucide-react"
 import { ServiceCard } from "./service-card"
+import { useEffect, useRef, useState } from "react"
 
 export function ServicesSection() {
+  const [isVisible, setIsVisible] = useState(false)
+  const sectionRef = useRef<HTMLElement>(null)
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true)
+        }
+      },
+      { threshold: 0.1 },
+    )
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current)
+    }
+
+    return () => observer.disconnect()
+  }, [])
+
   const services = [
     {
       number: "01",
@@ -55,42 +78,52 @@ export function ServicesSection() {
   ]
 
   return (
-    <section className="py-16">
+    <section ref={sectionRef} className="py-12 md:py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div className="mb-12">
-      <div className="grid grid-cols-2 gap-8">
-        <div>
-          <h2 className="text-3xl font-bold mb-4">Our Service – Great Heights Medical</h2>
-          <p className="text-gray-600 mb-8">
-            At Great Heights Medical, we offer modern, precise, and patient-centered services designed to elevate your
-            health and well-being.
-          </p>
-        </div>
-        <div className="flex justify-end items-center">
-          <div className="text-right">
-            <button className="bg-gray-900 hover:bg-gray-800 text-white px-6 py-3 rounded-full flex items-center gap-2 mb-2">
-              <Calendar className="w-4 h-4" />
-              Book an Appointment
-            </button>
-            <p className="text-gray-600 text-sm">Opening Hours: Mon-Fri, 9 AM – 6 PM</p>
+        <div
+          className={`mb-8 md:mb-12 transform transition-all duration-1000 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
+        >
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
+            <div>
+              <h2 className="text-2xl md:text-3xl font-bold mb-4 text-gray-900">Our Service – Great Heights Medical</h2>
+              <p className="text-gray-600 mb-6 lg:mb-8 text-sm md:text-base">
+                At Great Heights Medical, we offer modern, precise, and patient-centered services designed to elevate
+                your health and well-being.
+              </p>
+            </div>
+            <div className="flex justify-start lg:justify-end items-start lg:items-center">
+              <div className="text-left lg:text-right">
+                <Button className="bg-gray-900 hover:bg-gray-800 text-white px-4 md:px-6 py-3 rounded-full flex items-center gap-2 mb-2 transition-all duration-300 hover:scale-105 shadow-lg">
+                  <Calendar className="w-4 h-4" />
+                  <span className="hidden sm:inline">Book an Appointment</span>
+                  <span className="sm:hidden">Book Now</span>
+                </Button>
+                <p className="text-gray-600 text-xs md:text-sm">Opening Hours: Mon-Fri, 9 AM – 6 PM</p>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
 
         {/* Services Grid */}
-        <div className="grid lg:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8">
           {services.map((service, index) => (
-            <ServiceCard
+            <div
               key={index}
-              number={service.number}
-              title={service.title}
-              description={service.description}
-              features={service.features}
-              buttonText={service.buttonText}
-              imageSrc={service.imageSrc}
-              imageAlt={service.imageAlt}
-            />
+              className={`transform transition-all duration-1000 ${
+                isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
+              }`}
+              style={{ transitionDelay: `${index * 200}ms` }}
+            >
+              <ServiceCard
+                number={service.number}
+                title={service.title}
+                description={service.description}
+                features={service.features}
+                buttonText={service.buttonText}
+                imageSrc={service.imageSrc}
+                imageAlt={service.imageAlt}
+              />
+            </div>
           ))}
         </div>
       </div>
