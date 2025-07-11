@@ -1,19 +1,15 @@
-import type { Metadata } from 'next'
-import './globals.css'
-
-export const metadata: Metadata = {
-  title: 'Great Height Medical',
-  description: 'Great Heights Medical is a modern, patient-centered clinic offering personalized healthcare solutions with advanced technology and compassionate care.',
-  generator: 'v0.dev',
-}
+import type React from "react"
+import "./globals.css"
+import { Header } from "@/components/header"
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode
-}>) {
+}) {
   return (
     <html lang="en">
+      <Header />
       <body>{children}</body>
     </html>
   )

@@ -1,7 +1,7 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import { Calendar } from "lucide-react"
+import { ArrowRight, Calendar, ChevronRight } from "lucide-react"
 import { ServiceCard } from "./service-card"
 import { useEffect, useRef, useState } from "react"
 
@@ -29,52 +29,47 @@ export function ServicesSection() {
   const services = [
     {
       number: "01",
-      title: "Weight Loss & Body Composition (Styku 3D Scanner)",
-      description:
-        "Discover a smarter way to manage your body goals. Our Styku 3D Body Scanner captures a 360° image of your body in seconds, providing accurate metrics",
-      features: ["Full 3D body composition tracking", "Visualize progress over time", "Safe, non-invasive technology"],
+      title: "Fitness & Body Composition Tracking",
+      description: "Our physician-supervised weight loss program is designed to go beyond calorie counting and generic meal plans. We take a precision medicine approach rooted in your individual biology—to deliver sustainable results.",
+      features: [
+        "Tracking muscle gain and fat loss over time",
+        "Measuring progress more accurately than a traditional scale",
+        "Setting realistic goals for strength, tone, and endurance"
+      ],
       buttonText: "Schedule Your Scan",
-      imageSrc: "/images/scan1.jpg",
-      imageAlt: "3D Body Scanner",
+      bgColor: "bg-[#F0F9FF]",
+      textColor: "text-black",
+      buttonStyle: "bg-primary hover:bg-blue-600 text-white"
     },
     {
-      number: "02",
-      title: "Immigration Medical Exams",
-      description:
-        "We are proud to be a USCIS-designated civil surgeon, offering Immigration Medical Exams in accordance with federal guidelines. Our streamlined process",
-      features: ["Full physical examination", "Required vaccinations", "TB testing and other labs"],
-      buttonText: "Schedule Immigration Exam",
-      imageSrc: "/images/immigration_exam.jpg",
-      imageAlt: "Immigration Medical Exam",
+      number: "02", 
+      title: "USCIS Immigration Physical Exams",
+      description: "As a designated USCIS Civil Surgeon, Dr. Fatoki provides efficient, same-week immigration physical exams compliant with Form I-693 requirements. Our team ensures a smooth, respectful, and timely process.",
+      features: [
+        "Medical history review and physical exam",
+        "Required vaccinations and lab testing", 
+        "Completion and sealing of I-693 for submission",
+        "Multilingual staff and culturally sensitive care"
+      ],
+      buttonText: "Contact Us",
+      bgColor: "bg-gray-900",
+      textColor: "text-white",
+      buttonStyle: "bg-white hover:bg-gray-100 text-gray-900"
     },
     {
       number: "03",
-      title: "Drug Treatment & Recovery Support.",
-      description:
-        "At Great Heights Medical, we believe that recovery is possible with the right guidance, structure, and medical support.",
+      title: "Drug Treatment & Recovery Support",
+      description: "At Great Heights Medical, we believe that recovery is possible with the right guidance, structure, and medical support.",
       features: [
         "Medication-Assisted Treatment (MAT)",
         "One-on-one counseling and addiction support",
-        "Regular medical assessments and progress tracking",
+        "Regular medical assessments and progress tracking"
       ],
-      buttonText: "Start Your recovery Journey",
-      imageSrc: "/images/drug_treatment.jpg",
-      imageAlt: "Drug Treatment and Recovery",
-    },
-    {
-      number: "04",
-      title: "Primary & Preventive Care",
-      description:
-        "Offer routine checkups, blood pressure monitoring, diabetes screening, and annual physicals for adults and families.",
-      features: [
-        "Builds long-term patient relationships",
-        "Encourages overall health maintenance",
-        "Easy to bundle with other services",
-      ],
-      buttonText: "Start Your recovery Journey",
-      imageSrc: "/images/primary_care.jpg",
-      imageAlt: "Primary and Preventive Care",
-    },
+      buttonText: "Start Your Recovery Journey",
+      bgColor: "bg-[#F0F9FF]",
+      textColor: "text-gray-900", 
+      buttonStyle: "bg-primary hover:bg-blue-600 text-white"
+    }
   ]
 
   return (
@@ -94,9 +89,9 @@ export function ServicesSection() {
             <div className="flex justify-start lg:justify-end items-start lg:items-center">
               <div className="text-left lg:text-right">
                 <Button className="bg-gray-900 hover:bg-gray-800 text-white px-4 md:px-6 py-3 rounded-full flex items-center gap-2 mb-2 transition-all duration-300 hover:scale-105 shadow-lg">
-                  <Calendar className="w-4 h-4" />
                   <span className="hidden sm:inline">Book an Appointment</span>
                   <span className="sm:hidden">Book Now</span>
+                  <Calendar className="w-4 h-4" />
                 </Button>
                 <p className="text-gray-600 text-xs md:text-sm">Opening Hours: Mon-Fri, 9 AM – 6 PM</p>
               </div>
@@ -104,8 +99,8 @@ export function ServicesSection() {
           </div>
         </div>
 
-        {/* Services Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8">
+        {/* Services Cards */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
             <div
               key={index}
@@ -114,15 +109,44 @@ export function ServicesSection() {
               }`}
               style={{ transitionDelay: `${index * 200}ms` }}
             >
-              <ServiceCard
-                number={service.number}
-                title={service.title}
-                description={service.description}
-                features={service.features}
-                buttonText={service.buttonText}
-                imageSrc={service.imageSrc}
-                imageAlt={service.imageAlt}
-              />
+              <div className={`${service.bgColor} ${service.textColor} rounded-2xl p-8 h-full flex flex-col transition-all duration-300 hover:-translate-y-2`}>
+                {/* Number */}
+                <div className="text-6xl font-bold mb-6">
+                  {service.number}
+                </div>
+                
+                {/* Title */}
+                <h3 className="font-clash text-2xl font-bold mb-4 leading-tight">
+                  {service.title}
+                </h3>
+                
+                {/* Description */}
+                <p className={`mb-6 leading-relaxed ${service.bgColor === 'bg-gray-900' ? 'text-gray-300' : 'text-gray-600'}`}>
+                  {service.description}
+                </p>
+                
+                {/* Features */}
+                <ul className="space-y-3 mb-8 flex-grow">
+                  {service.features.map((feature, featureIndex) => (
+                    <li key={featureIndex} className="flex items-start">
+                      <div className={`w-1.5 h-1.5 rounded-full mt-2.5 mr-3 flex-shrink-0 ${
+                        service.bgColor === 'bg-gray-900' ? 'bg-blue-400' : 'bg-blue-500'
+                      }`}></div>
+                      <span className={`text-sm leading-relaxed ${
+                        service.bgColor === 'bg-gray-900' ? 'text-gray-300' : 'text-gray-600'
+                      }`}>
+                        {feature}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+                
+                {/* Button */}
+                <Button className={`${service.buttonStyle} px-4 md:px-6 py-3 rounded-full transition-all duration-300 hover:scale-105 shadow-lg`}>
+                  {service.buttonText}
+                  <ChevronRight className="w-4 h-4 ml-2" />
+                </Button>
+              </div>
             </div>
           ))}
         </div>

@@ -88,8 +88,12 @@ const config: Config = {
         "accordion-up": "accordion-up 0.2s ease-out",
       },
       fontFamily: {
-        clash: ["Clash Display", "sans-serif"],
+        // Set Clash Display as the default sans font
+        sans: ["Clash Display", "sans-serif"],
+        // Keep Inter available as an alternative
         inter: ["Inter", "sans-serif"],
+        // Keep clash available for explicit use
+        clash: ["Clash Display", "sans-serif"],
       },
       fontSize: {
         "section-title": "20px",

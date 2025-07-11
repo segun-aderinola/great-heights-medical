@@ -27,7 +27,7 @@ export function AboutSection() {
   }, [])
 
   return (
-    <section ref={sectionRef} className="bg-gray-50">
+    <section ref={sectionRef} className="bg-[#F0F9FF]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
           <div
@@ -39,8 +39,15 @@ export function AboutSection() {
               advanced, compassionate care. Located in a trusted community setting, our clinic is known for delivering
               personalized medical solutions using the latest technology and a patient-first approach.
             </p>
+            <Button className="bg-primary hover:bg-primary/90 text-white px-4 md:px-6 py-3 rounded-full transition-all duration-300 hover:scale-105 shadow-lg">
+              Read More About Us
+              <ChevronRight className="w-4 h-4 ml-2" />
+            </Button>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6 mb-6 md:mb-8">
+            <div className="mt-4">
+              <h2 className="text-2xl md:text-3xl font-bold mb-6 text-gray-900">Why Choose Great Heights Medical?</h2>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6 mb-6 md:mb-8 mt-4">
               {[
                 {
                   title: "Personalized, judgment-free care",
@@ -72,11 +79,6 @@ export function AboutSection() {
                 </div>
               ))}
             </div>
-
-            <Button className="bg-primary hover:bg-primary/90 text-white px-4 md:px-6 py-3 rounded-full transition-all duration-300 hover:scale-105 shadow-lg">
-              Read More About Us
-              <ChevronRight className="w-4 h-4 ml-2" />
-            </Button>
           </div>
           <div
             className={`relative transform transition-all duration-1000 delay-300 ${isVisible ? "translate-x-0 opacity-100" : "translate-x-10 opacity-0"}`}

@@ -1,28 +1,37 @@
 "use client"
 
+import { useRef, useEffect, useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Calendar } from "lucide-react"
-import { useEffect, useRef, useState } from "react"
 
-export function CTASection() {
-  const [isVisible, setIsVisible] = useState(false)
+export const CTASection = () => {
   const sectionRef = useRef<HTMLElement>(null)
+  const [isVisible, setIsVisible] = useState(false)
 
   useEffect(() => {
     const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true)
-        }
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsVisible(true)
+            observer.unobserve(entry.target) // Stop observing after it becomes visible
+          }
+        })
       },
-      { threshold: 0.1 },
+      {
+        threshold: 0.1, // Trigger when 10% of the section is visible
+      },
     )
 
     if (sectionRef.current) {
       observer.observe(sectionRef.current)
     }
 
-    return () => observer.disconnect()
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current)
+      }
+    }
   }, [])
 
   return (
@@ -36,18 +45,25 @@ export function CTASection() {
         backgroundRepeat: "no-repeat",
       }}
     >
+      {/* Blue accent borders */}
+      <div className="absolute left-0 top-0 bottom-0 w-1 bg-primary rounded-l-lg"></div>
+      <div className="absolute right-0 top-0 bottom-0 w-1 bg-primary rounded-r-lg"></div>
+
       {/* Dark overlay for transparency effect */}
       <div className="absolute inset-0 bg-gray-900 bg-opacity-75"></div>
+
       <div
-        className={`max-w-4xl mx-auto text-center px-4 relative z-10 transform transition-all duration-1000 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
+        className={`max-w-4xl mx-auto text-center px-4 relative z-10 transform transition-all duration-1000 ${
+          isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
+        }`}
       >
         <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-6 md:mb-8 leading-tight">
           Ready to take the next step in your health or immigration journey?
         </h2>
-        <Button className="bg-blue-600 hover:bg-blue-700 text-white px-6 md:px-8 py-3 rounded-md flex items-center gap-2 mx-auto font-medium transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl">
-          <Calendar className="w-4 h-4" />
+        <Button className="bg-primary hover:bg-primary/90 text-white px-4 md:px-6 py-3 rounded-full transition-all duration-300 hover:scale-105 shadow-lg text-md">
           <span className="hidden sm:inline">Book an Appointment</span>
           <span className="sm:hidden">Book Now</span>
+          <Calendar className="w-4 h-4" />
         </Button>
       </div>
     </section>

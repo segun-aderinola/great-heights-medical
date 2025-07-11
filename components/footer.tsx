@@ -46,7 +46,7 @@ export function Footer() {
               />
             </div>
 
-            <p className="text-sm md:text-base text-gray-300 mb-4 leading-relaxed">
+            <p className="text-sm md:text-base text-gray-300 mb-4 leading-relaxed mt-5 font-light">
               At Great Heights Medical, we are committed to guiding you toward
               better health and well-being through advanced, compassionate care.
             </p>
@@ -57,7 +57,7 @@ export function Footer() {
 
           <div>
             <h3 className="font-semibold mb-4 text-lg">Quick Links</h3>
-            <ul className="space-y-2">
+            <ul className="space-y-2 font-light">
               {["Home", "About Us", "Book an Appointment", "Contact Us"].map(
                 (link, index) => (
                   <li key={index}>
@@ -75,7 +75,7 @@ export function Footer() {
 
           <div>
             <h3 className="font-semibold mb-4 text-lg">Our Services</h3>
-            <ul className="space-y-2">
+            <ul className="space-y-2 font-light">
               {[
                 "Styku 3D Body Scan",
                 "Immigration Physical Exams",
@@ -96,7 +96,7 @@ export function Footer() {
 
           <div>
             <h3 className="font-semibold mb-4 text-lg">Location</h3>
-            <div className="space-y-4 text-sm md:text-base">
+            <div className="space-y-4 text-sm md:text-base font-light">
               <div>
                 <p className="text-gray-300">
                   315 E Mckinley Road, Ottawa, IL 61350

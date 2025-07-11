@@ -27,21 +27,24 @@ export function CoreValuesSection() {
 
   const values = [
     {
-      icon: (
-        <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center">
-          <div className="w-3 h-3 bg-blue-500 rounded-full"></div>
-        </div>
-      ),
+      // icon: (
+      //   <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center">
+      //     <div className="w-3 h-3 bg-blue-500 rounded-full"></div>
+      //   </div>
+      // ),
+      icon: '/icons/love.png',
       title: "Excellence",
       description: "Committed to the highest standards of medical care",
     },
     {
-      icon: <Zap className="w-8 h-8 text-white" fill="white" />,
+      icon: '/icons/integrity.png',
+      // icon: <Zap className="w-8 h-8 text-white" fill="white" />,
       title: "Integrity",
       description: "Operating with transparency and honesty",
     },
     {
-      icon: <Users className="w-8 h-8 text-white" fill="white" />,
+      // icon: <Users className="w-8 h-8 text-white" fill="white" />,
+      icon: '/icons/user-love.png',
       title: "Patient-Centered",
       description: "Your health goals are our priority",
     },
@@ -55,7 +58,7 @@ export function CoreValuesSection() {
             className={`relative order-2 lg:order-1 transform transition-all duration-1000 ${isVisible ? "translate-x-0 opacity-100" : "-translate-x-10 opacity-0"}`}
           >
             <Image
-              src="/images/core_values.jpg"
+              src="/images/doctors.png"
               alt="Our Core Values"
               width={600}
               height={400}
@@ -78,8 +81,8 @@ export function CoreValuesSection() {
                   className={`flex items-start transform transition-all duration-1000 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
                   style={{ transitionDelay: `${(index + 1) * 200}ms` }}
                 >
-                  <div className="w-12 h-12 md:w-16 md:h-16 bg-blue-500 rounded-full flex items-center justify-center mr-4 md:mr-6 flex-shrink-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
-                    {value.icon}
+                  <div className="w-12 h-12 md:w-12 md:h-12 rounded-full flex items-center justify-center mr-4 md:mr-6 flex-shrink-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+                    <img src={`${value.icon}`} alt="" />
                   </div>
                   <div>
                     <h3 className="text-lg md:text-xl font-bold mb-2 text-gray-900">{value.title}</h3>
