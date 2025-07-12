@@ -6,15 +6,16 @@ import { CoreValuesSection } from "@/components/core-values-section"
 import {CTASection} from "@/components/cta-section"
 import { Footer } from "@/components/footer"
 import { ServicesHeroSection } from "@/components/services-hero-section"
+import { HealthAssessmentSection } from "@/components/health-assessment-section"
+import { StykulTechnologySection } from "@/components/styku-technology-section"
+import { WhatIsStykulSection } from "@/components/what-is-styku-section"
 
 export default function ServicesPage() {
   return (
     <div className="min-h-screen bg-white">
-      <ServicesHeroSection />
-      <StatsSection />
-      <ServicesSection />
-      <AboutSection />
-      <CoreValuesSection />
+      <HealthAssessmentSection />
+      <WhatIsStykulSection />
+      <StykulTechnologySection />
       <ProcessSection />
       <CTASection />
     </div>

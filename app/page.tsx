@@ -18,7 +18,6 @@ export default function HomePage() {
       <CoreValuesSection />
       <ProcessSection />
       <CTASection />
-      <Footer />
     </div>
   )
 }

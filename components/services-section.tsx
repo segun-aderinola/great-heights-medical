@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button"
 import { ArrowRight, Calendar, ChevronRight } from "lucide-react"
 import { ServiceCard } from "./service-card"
 import { useEffect, useRef, useState } from "react"
+import Link from "next/link"
 
 export function ServicesSection() {
   const [isVisible, setIsVisible] = useState(false)
@@ -39,7 +40,8 @@ export function ServicesSection() {
       buttonText: "Schedule Your Scan",
       bgColor: "bg-[#F0F9FF]",
       textColor: "text-black",
-      buttonStyle: "bg-primary hover:bg-blue-600 text-white"
+      buttonStyle: "bg-primary hover:bg-primary text-white",
+      link: "/services/weightloss"
     },
     {
       number: "02", 
@@ -54,7 +56,8 @@ export function ServicesSection() {
       buttonText: "Contact Us",
       bgColor: "bg-gray-900",
       textColor: "text-white",
-      buttonStyle: "bg-white hover:bg-gray-100 text-gray-900"
+      buttonStyle: "bg-white hover:bg-gray-100 text-gray-900",
+      link: "#"
     },
     {
       number: "03",
@@ -68,7 +71,8 @@ export function ServicesSection() {
       buttonText: "Start Your Recovery Journey",
       bgColor: "bg-[#F0F9FF]",
       textColor: "text-gray-900", 
-      buttonStyle: "bg-primary hover:bg-blue-600 text-white"
+      buttonStyle: "bg-primary hover:bg-primary text-white",
+      link: "#"
     }
   ]
 
@@ -130,7 +134,7 @@ export function ServicesSection() {
                   {service.features.map((feature, featureIndex) => (
                     <li key={featureIndex} className="flex items-start">
                       <div className={`w-1.5 h-1.5 rounded-full mt-2.5 mr-3 flex-shrink-0 ${
-                        service.bgColor === 'bg-gray-900' ? 'bg-blue-400' : 'bg-blue-500'
+                        service.bgColor === 'bg-gray-900' ? 'bg-blue-400' : 'bg-primary'
                       }`}></div>
                       <span className={`text-sm leading-relaxed ${
                         service.bgColor === 'bg-gray-900' ? 'text-gray-300' : 'text-gray-600'
@@ -142,10 +146,12 @@ export function ServicesSection() {
                 </ul>
                 
                 {/* Button */}
-                <Button className={`${service.buttonStyle} px-4 md:px-6 py-3 rounded-full transition-all duration-300 hover:scale-105 shadow-lg`}>
-                  {service.buttonText}
-                  <ChevronRight className="w-4 h-4 ml-2" />
-                </Button>
+                <Link href={service.link} className="block">
+                  <Button className={`${service.buttonStyle} px-4 md:px-6 py-3 rounded-full transition-all duration-300 hover:scale-105 shadow-lg`}>
+                    {service.buttonText}
+                    <ChevronRight className="w-4 h-4 ml-2" />
+                  </Button>
+                </Link>
               </div>
             </div>
           ))}

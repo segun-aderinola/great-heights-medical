@@ -71,7 +71,7 @@ export function ProcessSection() {
                 >
                   <h3 className="text-lg md:text-xl font-bold mb-2 md:mb-3 text-gray-900">{process.title}</h3>
                   <p className="text-gray-600 text-sm md:text-base">{process.description}</p>
-                  <div className="w-8 h-8 md:w-10 md:h-10 bg-blue-500 text-white rounded-full flex items-center justify-center mb-3 md:mb-4 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+                  <div className="w-8 h-8 md:w-10 md:h-10 bg-primary text-white rounded-full flex items-center justify-center mb-3 md:mb-4 transition-all duration-300 hover:scale-105">
                     <span className="text-sm md:text-lg font-bold">{process.number}</span>
                   </div>
                 </div>

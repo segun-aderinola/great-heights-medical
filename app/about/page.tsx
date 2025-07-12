@@ -13,7 +13,6 @@ export default function AboutPage() {
       <StatsSection />
       <ServicesSection />
       <CTASection />
-      <Footer />
     </div>
   )
 }

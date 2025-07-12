@@ -109,7 +109,7 @@ export function Header() {
             {/* Weight Loss & Body Composition */}
             <div className="bg-gray-50 rounded-lg p-6 hover:bg-gray-100 transition-colors">
               <div className="flex items-center mb-4">
-                <div className="bg-blue-500 text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-semibold mr-3">
+                <div className="bg-primary text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-semibold mr-3">
                   1
                 </div>
                 <h3 className="text-lg font-semibold text-gray-900">Weight Loss & Body Composition</h3>
@@ -128,7 +128,7 @@ export function Header() {
             {/* Immigration Medical Exams */}
             <div className="bg-gray-50 rounded-lg p-6 hover:bg-gray-100 transition-colors">
               <div className="flex items-center mb-4">
-                <div className="bg-blue-500 text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-semibold mr-3">
+                <div className="bg-primary text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-semibold mr-3">
                   2
                 </div>
                 <h3 className="text-lg font-semibold text-gray-900">Immigration Medical Exams</h3>
@@ -137,7 +137,7 @@ export function Header() {
                 We are proud to be a USCIS-designated civil surgeon, offering Immigration Medical Exams in accordance with federal guidelines. Our streamlined process ensures efficiency.
               </p>
               <Button 
-                className="bg-blue-500 hover:bg-blue-600 text-white rounded-full"
+                className="bg-primary hover:bg-primary text-white rounded-full"
                 onClick={closeServicesDropdown}
               >
                 Book Immigration Exam
@@ -148,7 +148,7 @@ export function Header() {
             {/* Drug Treatment & Recovery Support */}
             <div className="bg-gray-50 rounded-lg p-6 hover:bg-gray-100 transition-colors">
               <div className="flex items-center mb-4">
-                <div className="bg-blue-500 text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-semibold mr-3">
+                <div className="bg-primary text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-semibold mr-3">
                   3
                 </div>
                 <h3 className="text-lg font-semibold text-gray-900">Drug Treatment & Recovery Support</h3>
@@ -157,7 +157,7 @@ export function Header() {
                 At Great Heights Medical, we believe that recovery is possible with the right guidance, structure, and medical support for your journey.
               </p>
               <Button 
-                className="bg-blue-500 hover:bg-blue-600 text-white rounded-full"
+                className="bg-primary hover:bg-primary text-white rounded-full"
                 onClick={closeServicesDropdown}
               >
                 Start Your Recovery Journey
