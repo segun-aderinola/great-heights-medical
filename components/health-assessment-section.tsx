@@ -24,7 +24,7 @@ export function HealthAssessmentSection() {
                 isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
               }`}
             >
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight text-gray-900">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight text-gray-900 pt-5">
                 Need a health assessment? There's a new way to track your health.
               </h1>
               <p className="text-lg sm:text-xl mb-8 text-gray-600 leading-relaxed font-light">
