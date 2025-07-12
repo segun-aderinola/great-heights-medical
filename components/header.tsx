@@ -168,14 +168,14 @@ export function Header() {
       >
         <nav className="px-4 py-6 space-y-4">
           <Link
-            href="#"
+            href="/"
             className="block text-gray-700 hover:text-primary text-body-text py-2 transition-colors"
             onClick={closeMobileMenu}
           >
             Home
           </Link>
           <Link
-            href="#"
+            href="/about"
             className="block text-gray-700 hover:text-primary text-body-text py-2 transition-colors"
             onClick={closeMobileMenu}
           >
@@ -196,13 +196,15 @@ export function Header() {
             Faqs
           </Link>
           <div className="pt-4 border-t border-gray-200">
-            <Button
-              className="w-full bg-primary hover:bg-primary/90 text-white transition-colors"
-              onClick={closeMobileMenu}
-            >
-              <Phone className="w-4 h-4 mr-2" />
-              Contact Us
-            </Button>
+            <Link href="#">
+              <Button
+                className="w-full bg-primary hover:bg-primary/90 text-white transition-colors"
+                onClick={closeMobileMenu}
+              >
+                <Phone className="w-4 h-4 mr-2" />
+                Contact Us
+              </Button>
+            </Link>
           </div>
         </nav>
       </div>
