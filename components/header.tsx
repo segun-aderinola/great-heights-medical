@@ -51,14 +51,18 @@ export function Header() {
             <Link href="/about" className="text-gray-700 hover:text-primary text-body-text transition-colors">
               About Us
             </Link>
-            <div className="relative group">
+            <Link href="/services" className="text-gray-700 hover:text-primary text-body-text transition-colors">
+              Services
+            </Link>
+            {/* <div className="relative group">
               <button 
                 onClick={toggleServicesDropdown}
                 className="text-gray-700 hover:text-primary text-body-text flex items-center transition-colors"
               >
-                Services <ChevronDown className={`ml-1 h-4 w-4 transition-transform duration-200 ${isServicesDropdownOpen ? 'rotate-180' : ''}`} />
+                Services 
+                <ChevronDown className={`ml-1 h-4 w-4 transition-transform duration-200 ${isServicesDropdownOpen ? 'rotate-180' : ''}`} />
               </button>
-            </div>
+            </div> */}
             <Link href="#" className="text-gray-700 hover:text-primary text-body-text transition-colors">
               Faqs
             </Link>
