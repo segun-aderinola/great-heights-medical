@@ -186,7 +186,7 @@ export function Header() {
             className="block text-gray-700 hover:text-primary text-body-text py-2 transition-colors"
             onClick={closeMobileMenu}
           >
-            About Us
+            Services
           </Link>
           <Link
             href="#"
