@@ -54,15 +54,6 @@ export function Header() {
             <Link href="/services" className="text-gray-700 hover:text-primary text-body-text transition-colors">
               Services
             </Link>
-            {/* <div className="relative group">
-              <button 
-                onClick={toggleServicesDropdown}
-                className="text-gray-700 hover:text-primary text-body-text flex items-center transition-colors"
-              >
-                Services 
-                <ChevronDown className={`ml-1 h-4 w-4 transition-transform duration-200 ${isServicesDropdownOpen ? 'rotate-180' : ''}`} />
-              </button>
-            </div> */}
             <Link href="#" className="text-gray-700 hover:text-primary text-body-text transition-colors">
               Faqs
             </Link>
@@ -92,11 +83,6 @@ export function Header() {
           </div>
         </div>
       </div>
-
-      {/* Services Dropdown Modal */}
-      {isServicesDropdownOpen && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 z-40" onClick={closeServicesDropdown} />
-      )}
       
       <div
         className={`
@@ -195,14 +181,13 @@ export function Header() {
           >
             About Us
           </Link>
-          <div className="py-2">
-            <button 
-              onClick={toggleServicesDropdown}
-              className="text-gray-700 hover:text-primary text-body-text flex items-center transition-colors"
-            >
-              Services <ChevronDown className={`ml-1 h-4 w-4 transition-transform duration-200 ${isServicesDropdownOpen ? 'rotate-180' : ''}`} />
-            </button>
-          </div>
+          <Link
+            href="/services"
+            className="block text-gray-700 hover:text-primary text-body-text py-2 transition-colors"
+            onClick={closeMobileMenu}
+          >
+            About Us
+          </Link>
           <Link
             href="#"
             className="block text-gray-700 hover:text-primary text-body-text py-2 transition-colors"
