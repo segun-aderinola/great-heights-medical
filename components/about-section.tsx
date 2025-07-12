@@ -27,7 +27,7 @@ export function AboutSection() {
   }, [])
 
   return (
-    <section ref={sectionRef} className="bg-[#F0F9FF]">
+    <section ref={sectionRef} className="bg-[#F0F9FF] pt-6">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
           <div
@@ -44,7 +44,7 @@ export function AboutSection() {
               <ChevronRight className="w-4 h-4 ml-2" />
             </Button>
 
-            <div className="mt-4">
+            <div className="mt-4 pt-6">
               <h2 className="text-2xl md:text-3xl font-bold mb-6 text-gray-900">Why Choose Great Heights Medical?</h2>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6 mb-6 md:mb-8 mt-4">
