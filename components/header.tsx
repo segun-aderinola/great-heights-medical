@@ -54,9 +54,9 @@ export function Header() {
             <Link href="/services" className="text-gray-700 hover:text-primary text-body-text transition-colors">
               Services
             </Link>
-            <Link href="#" className="text-gray-700 hover:text-primary text-body-text transition-colors">
+            {/* <Link href="#" className="text-gray-700 hover:text-primary text-body-text transition-colors">
               Faqs
-            </Link>
+            </Link> */}
           </nav>
 
           {/* Desktop Right Side */}
@@ -193,13 +193,13 @@ export function Header() {
           >
             Services
           </Link>
-          <Link
+          {/* <Link
             href="#"
             className="block text-gray-700 hover:text-primary text-body-text py-2 transition-colors"
             onClick={closeMobileMenu}
           >
             Faqs
-          </Link>
+          </Link> */}
           <div className="pt-4 border-t border-gray-200">
             <Link href="https://calendly.com/great-heights-info/30min">
               <Button
