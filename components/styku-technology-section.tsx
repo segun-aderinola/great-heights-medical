@@ -3,6 +3,7 @@
 import { Button } from "@/components/ui/button"
 import { Calendar } from "lucide-react"
 import Image from "next/image"
+import Link from "next/link"
 import { useEffect, useState } from "react"
 
 export function StykulTechnologySection() {
@@ -48,6 +49,7 @@ export function StykulTechnologySection() {
                   isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
                 }`}
               >
+              <Link href="https://calendly.com/great-heights-info/30min">
                 <Button
                   size="lg"
                   className="bg-primary hover:bg-blue-700 text-white px-8 py-4 text-md font-medium rounded-full transition-all duration-300 hover:scale-105 shadow-lg"
@@ -55,6 +57,7 @@ export function StykulTechnologySection() {
                   Book an Appointment
                   <Calendar className="w-5 h-5 ml-2" />
                 </Button>
+              </Link>
               </div>
             </div>
           </div>

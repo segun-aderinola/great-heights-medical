@@ -57,7 +57,7 @@ export function ServicesSection() {
       bgColor: "bg-gray-900",
       textColor: "text-white",
       buttonStyle: "bg-white hover:bg-gray-100 text-gray-900",
-      link: "#"
+      link: "https://calendly.com/great-heights-info/30min"
     },
     {
       number: "03",
@@ -92,11 +92,13 @@ export function ServicesSection() {
             </div>
             <div className="flex justify-start lg:justify-end items-start lg:items-center">
               <div className="text-left lg:text-right">
+              <Link href="https://calendly.com/great-heights-info/30min">
                 <Button className="bg-gray-900 hover:bg-gray-800 text-white px-4 md:px-6 py-3 rounded-full flex items-center gap-2 mb-2 transition-all duration-300 hover:scale-105 shadow-lg">
                   <span className="hidden sm:inline">Book an Appointment</span>
                   <span className="sm:hidden">Book Now</span>
                   <Calendar className="w-4 h-4" />
                 </Button>
+                </Link>
                 <p className="text-gray-600 text-xs md:text-sm">Opening Hours: Mon-Fri, 9 AM – 6 PM</p>
               </div>
             </div>

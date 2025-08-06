@@ -3,6 +3,7 @@
 import { useRef, useEffect, useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Calendar } from "lucide-react"
+import Link from "next/link"
 
 export const CTASection = () => {
   const sectionRef = useRef<HTMLElement>(null)
@@ -60,11 +61,13 @@ export const CTASection = () => {
         <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-6 md:mb-8 leading-tight">
           Ready to take the next step in your health or immigration journey?
         </h2>
-        <Button className="bg-primary hover:bg-primary/90 text-white px-4 md:px-6 py-3 rounded-full transition-all duration-300 hover:scale-105 shadow-lg text-md">
-          <span className="hidden sm:inline">Book an Appointment</span>
-          <span className="sm:hidden">Book Now</span>
-          <Calendar className="w-4 h-4" />
-        </Button>
+        <Link href="https://calendly.com/great-heights-info/30min">
+          <Button className="bg-primary hover:bg-primary/90 text-white px-4 md:px-6 py-3 rounded-full transition-all duration-300 hover:scale-105 shadow-lg text-md">
+            <span className="hidden sm:inline">Book an Appointment</span>
+            <span className="sm:hidden">Book Now</span>
+            <Calendar className="w-4 h-4" />
+          </Button>
+        </Link>
       </div>
     </section>
   )

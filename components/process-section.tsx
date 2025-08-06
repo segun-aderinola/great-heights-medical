@@ -3,6 +3,7 @@
 import { Button } from "@/components/ui/button"
 import { Calendar } from "lucide-react"
 import Image from "next/image"
+import Link from "next/link"
 import { useEffect, useRef, useState } from "react"
 
 export function ProcessSection() {
@@ -80,11 +81,13 @@ export function ProcessSection() {
             </div>
 
             {/* Book an Appointment Button */}
-            <Button className="bg-gray-800 hover:bg-gray-700 text-white px-4 md:px-6 py-3 rounded-full flex items-center gap-2 font-medium transition-all duration-300 hover:scale-105 shadow-lg">
-              <span className="hidden sm:inline">Book an Appointment</span>
-              <span className="sm:hidden">Book Now</span>
-              <Calendar className="w-4 md:w-5 h-4 md:h-5" />
-            </Button>
+            <Link href="https://calendly.com/great-heights-info/30min">
+              <Button className="bg-gray-800 hover:bg-gray-700 text-white px-4 md:px-6 py-3 rounded-full flex items-center gap-2 font-medium transition-all duration-300 hover:scale-105 shadow-lg">
+                <span className="hidden sm:inline">Book an Appointment</span>
+                <span className="sm:hidden">Book Now</span>
+                <Calendar className="w-4 md:w-5 h-4 md:h-5" />
+              </Button>
+            </Link>
           </div>
           <div
             className={`relative transform transition-all duration-1000 delay-300 ${isVisible ? "translate-x-0 opacity-100" : "translate-x-10 opacity-0"}`}

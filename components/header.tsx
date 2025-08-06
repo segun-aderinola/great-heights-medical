@@ -62,10 +62,12 @@ export function Header() {
           {/* Desktop Right Side */}
           <div className="hidden md:flex items-center space-x-4">
             <span className="text-gray-600 text-body-text">Hours: Mon-Fri, 9 AM – 6 PM</span>
-            <Button className="bg-primary hover:bg-primary/90 text-white transition-colors rounded-full">
-              Contact Us
-              <Phone className="w-4 h-4 mr-2" />
-            </Button>
+            <Link href="https://calendly.com/great-heights-info/30min">
+              <Button className="bg-primary hover:bg-primary/90 text-white transition-colors rounded-full">
+                Contact Us
+                <Phone className="w-4 h-4 mr-2" />
+              </Button>
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -122,13 +124,16 @@ export function Header() {
               <p className="text-gray-600 mb-4">
                 We are proud to be a USCIS-designated civil surgeon, offering Immigration Medical Exams in accordance with federal guidelines. Our streamlined process ensures efficiency.
               </p>
-              <Button 
-                className="bg-primary hover:bg-primary text-white rounded-full"
-                onClick={closeServicesDropdown}
-              >
-                Book Immigration Exam
-                <ChevronRight className="w-4 h-4" />
-              </Button>
+
+              <Link href="https://calendly.com/great-heights-info/30min">
+                <Button 
+                  className="bg-primary hover:bg-primary text-white rounded-full"
+                  onClick={closeServicesDropdown}
+                >
+                  Book Immigration Exam
+                  <ChevronRight className="w-4 h-4" />
+                </Button>
+              </Link>
             </div>
 
             {/* Drug Treatment & Recovery Support */}
@@ -196,7 +201,7 @@ export function Header() {
             Faqs
           </Link>
           <div className="pt-4 border-t border-gray-200">
-            <Link href="#">
+            <Link href="https://calendly.com/great-heights-info/30min">
               <Button
                 className="w-full bg-primary hover:bg-primary/90 text-white transition-colors"
                 onClick={closeMobileMenu}

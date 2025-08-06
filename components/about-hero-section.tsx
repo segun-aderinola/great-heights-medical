@@ -50,7 +50,7 @@ export function AboutHeroSection() {
                 isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
               }`}
             >
-            <Link href="#">
+            <Link href="https://calendly.com/great-heights-info/30min">
               <Button
                 size="lg"
                 className="bg-primary hover:bg-blue-700 text-white px-8 py-4 text-md font-medium rounded-full transition-all duration-300 hover:scale-105 shadow-lg"
