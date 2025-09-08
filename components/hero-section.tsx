@@ -18,7 +18,7 @@ export function HeroSection() {
       {/* Background Image */}
       <div className="absolute inset-0">
         <Image
-          src="/images/hero-bg-new.png"
+          src="/images/new-hero-bg.jpg"
           alt="Medical professional"
           fill
           className="object-cover object-center"
@@ -27,27 +27,27 @@ export function HeroSection() {
       </div>
 
       {/* Dark Overlay */}
-      <div className="absolute inset-0 bg-black/70"></div>
+      <div className="absolute inset-0 bg-[#EBF2FE]/70"></div>
 
       {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-        <div className="max-w-2xl">
+      <div className="relative z-10  px-4 sm:px-6 lg:px-8 w-full">
+        <div className="max-w-4xl mx-auto text-center">
           <div
             className={`transform transition-all duration-1000 ${
               isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
             }`}
           >
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight text-white">
-              Achieve Your Best Self with Advanced Weight Loss & Immigration Medicals
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight text-black">
+              Achieve Your Best Self with Advanced <span className="text-blue-400">Medicals</span>
             </h1>
 
-            <p className="text-lg sm:text-xl mb-8 text-white/90 leading-relaxed max-w-xl font-light">
+            <p className="text-lg sm:text-xl mb-8 text-black/90 leading-relaxed max-w-xl mx-auto font-light">
               We combine evidence-based medicine with cutting-edge technology to deliver personalized care that fits
               your goals.
             </p>
 
             <div
-              className={`flex flex-col sm:flex-row gap-4 transform transition-all duration-1000 delay-300 ${
+              className={`flex flex-col sm:flex-row gap-4 justify-center transform transition-all duration-1000 delay-300 ${
                 isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
               }`}
             >

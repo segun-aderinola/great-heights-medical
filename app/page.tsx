@@ -7,17 +7,18 @@ import { ProcessSection } from "@/components/process-section"
 import { CoreValuesSection } from "@/components/core-values-section"
 import {CTASection} from "@/components/cta-section"
 import { Footer } from "@/components/footer"
+import { Styku3DSection } from "@/components/styku-3d-section"
+import { FAQSection } from "@/components/faq-section"
 
 export default function HomePage() {
   return (
     <div className="min-h-screen bg-white">
       <HeroSection />
       <StatsSection />
-      <ServicesSection />
       <AboutSection />
-      <CoreValuesSection />
-      <ProcessSection />
-      <CTASection />
+      <ServicesSection />
+      <Styku3DSection />
+      <FAQSection />
     </div>
   )
 }
