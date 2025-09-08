@@ -270,7 +270,7 @@ export function Footer() {
                 {[
                   { name: "Home", href: "/" },
                   { name: "About Us", href: "/about" },
-                  { name: "Book a Scan", href: "/book-scan" },
+                  { name: "Services", href: "/services" },
                   { name: "Contact Us", href: "/contact" }
                 ].map((link, index) => (
                   <li key={index}>

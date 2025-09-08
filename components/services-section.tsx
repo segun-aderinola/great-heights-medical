@@ -14,7 +14,7 @@ export function ServicesSection() {
       description: "Our physician-supervised weight loss program is designed to go beyond calorie counting and generic meal plans.",
       buttonText: "Book Your Scan",
       buttonIcon: Calendar,
-      href: "/book-scan"
+      href: "/services"
     },
     {
       icon: FileText,

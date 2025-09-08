@@ -21,7 +21,7 @@ export function Styku3DSection() {
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-            <Link href="/book-scan">
+            <Link href="https://calendly.com/great-heights-info/30min">
               <Button
                 size="lg"
                 className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-4 rounded-full font-medium transition-all duration-300 hover:scale-105 shadow-lg"
