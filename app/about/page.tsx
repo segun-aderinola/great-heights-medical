@@ -12,7 +12,6 @@ export default function AboutPage() {
       <AboutSection />
       <StatsSection />
       <ServicesSection />
-      <CTASection />
     </div>
   )
 }

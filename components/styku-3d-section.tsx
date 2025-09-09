@@ -24,7 +24,7 @@ export function Styku3DSection() {
             <Link href="https://calendly.com/great-heights-info/30min">
               <Button
                 size="lg"
-                className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-4 rounded-full font-medium transition-all duration-300 hover:scale-105 shadow-lg"
+                className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-6 rounded-full font-medium transition-all duration-300 hover:scale-105 shadow-lg"
               >
                 Book Your Scan
                 <Calendar className="w-5 h-5 ml-2" />

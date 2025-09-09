@@ -216,7 +216,7 @@ export function Footer() {
             <Link href="https://calendly.com/great-heights-info/30min">
               <Button 
                 size="lg"
-                className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-4 rounded-full font-medium transition-all duration-300 hover:scale-105 shadow-lg"
+                className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-6 rounded-full font-medium transition-all duration-300 hover:scale-105 shadow-lg"
               >
                 Book an Appointment
                 <Calendar className="w-5 h-5 ml-2" />
@@ -227,7 +227,7 @@ export function Footer() {
               <Button 
                 variant="outline"
                 size="lg"
-                className="border-2 border-white text-white hover:bg-white hover:text-black px-8 py-4 rounded-full font-medium transition-all duration-300 hover:scale-105 bg-transparent"
+                className="border-2 border-white text-white hover:bg-white hover:text-black px-8 py-6 rounded-full font-medium transition-all duration-300 hover:scale-105 bg-transparent"
               >
                 Read About Us
               </Button>

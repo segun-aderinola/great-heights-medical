@@ -18,7 +18,7 @@ export function HeroSection() {
       {/* Background Image */}
       <div className="absolute inset-0">
         <Image
-          src="/images/new-hero-bg.jpg"
+          src="/images/services_hero_bg.jpg"
           alt="Medical professional"
           fill
           className="object-cover object-center"
@@ -27,21 +27,21 @@ export function HeroSection() {
       </div>
 
       {/* Dark Overlay */}
-      <div className="absolute inset-0 bg-[#EBF2FE]/70"></div>
+      <div className="absolute inset-0 bg-black/70"></div>
 
       {/* Content */}
-      <div className="relative z-10  px-4 sm:px-6 lg:px-8 w-full">
+      <div className="relative z-10 px-4 sm:px-6 lg:px-8 w-full">
         <div className="max-w-4xl mx-auto text-center">
           <div
             className={`transform transition-all duration-1000 ${
               isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
             }`}
           >
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight text-black">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight text-white">
               Achieve Your Best Self with Advanced <span className="text-blue-400">Medicals</span>
             </h1>
 
-            <p className="text-lg sm:text-xl mb-8 text-black/90 leading-relaxed max-w-xl mx-auto font-light">
+            <p className="text-lg sm:text-xl mb-8 text-white/90 leading-relaxed max-w-xl mx-auto font-light">
               We combine evidence-based medicine with cutting-edge technology to deliver personalized care that fits
               your goals.
             </p>
@@ -54,7 +54,7 @@ export function HeroSection() {
               <Link href="https://calendly.com/great-heights-info/30min">
                 <Button
                   size="lg"
-                  className="bg-primary hover:bg-blue-700 text-white px-8 py-4 text-md font-medium rounded-full transition-all duration-300 hover:scale-105 shadow-lg"
+                  className="bg-primary hover:bg-blue-700 text-white px-8 py-6 text-md font-medium rounded-full transition-all duration-300 hover:scale-105 shadow-lg"
                 >
                   Book an Appointment
                   <Calendar className="w-5 h-5 mr-2" />
@@ -65,7 +65,7 @@ export function HeroSection() {
                 <Button
                   variant="outline"
                   size="lg"
-                  className="border-2 border-white text-black hover:bg-black hover:text-white px-8 py-4 text-md font-medium rounded-full bg-white transition-all duration-300 hover:scale-105"
+                  className="border-2 border-white text-black hover:bg-black hover:text-white px-8 py-6 text-md font-medium rounded-full bg-white transition-all duration-300 hover:scale-105"
                 >
                   Read About Us
                 </Button>

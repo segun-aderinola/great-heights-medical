@@ -24,7 +24,7 @@ export function FreeScanSection() {
           {/* CTA Button and Hours */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
             <Link href="https://calendly.com/great-heights-info/30min">
-              <Button className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-4 rounded-full font-medium text-md transition-all duration-300 hover:scale-105">
+              <Button className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-6 rounded-full font-medium text-md transition-all duration-300 hover:scale-105">
                 Book Your Scan
                 <Calendar className="w-5 h-5 ml-2" />
               </Button>

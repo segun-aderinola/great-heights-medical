@@ -1,6 +1,7 @@
+'use client';
+
 import { Button } from "@/components/ui/button"
 import { ChevronRight } from "lucide-react"
-import Image from "next/image"
 import Link from "next/link"
 
 export function AboutSection() {
@@ -28,18 +29,15 @@ export function AboutSection() {
                 medical solutions using the latest technology and a patient-first approach.
               </p>
               
-              <p className="text-lg mb-8 leading-relaxed opacity-95">
-                At Great Heights Medical, we are committed to guiding you toward better 
-                health and well-being through advanced, compassionate care. Located in a 
-                trusted community setting, our clinic is known for delivering personalized 
-                medical solutions using the latest technology and a patient-first approach.
+              <p className="text-lg mb-8 leading-relaxed opacity-95">     
+                The Styku scanner offers a comprehensive body shape analysis, assesses body composition (fat versus lean body mass), and supports you in achieving your body composition goals by calculating your daily caloric expenditure and the maximum caloric intake needed to meet your targets.
               </p>
               
               <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
                 <Link href="/about">
-                  <Button 
+                  <Button
                     variant="secondary"
-                    className="bg-black hover:bg-gray-800 text-white px-6 py-3 rounded-full font-medium transition-all duration-300 hover:scale-105"
+                    className="bg-black hover:bg-gray-800 text-white px-6 py-6 rounded-full font-medium transition-all duration-300 hover:scale-105"
                   >
                     Read More About Us
                     <ChevronRight className="w-4 h-4 ml-2" />
@@ -56,12 +54,14 @@ export function AboutSection() {
           {/* Image */}
           <div className="relative">
             <div className="relative rounded-3xl overflow-hidden shadow-xl">
-              <Image
-                src="/images/yemi-new.png"
-                alt="Medical professional at Great Heights Medical"
+              <video
+                src="/images/woman_jogging.mp4"
                 width={600}
                 height={700}
                 className="object-cover w-full h-[500px] lg:h-[600px]"
+                autoPlay
+                loop
+                muted
               />
             </div>
           </div>

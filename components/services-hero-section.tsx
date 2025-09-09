@@ -53,7 +53,7 @@ export function ServicesHeroSection() {
               <Link href="https://calendly.com/great-heights-info/30min">
                 <Button
                   size="lg"
-                  className="bg-primary hover:bg-blue-700 text-white px-8 py-4 text-md font-medium rounded-full transition-all duration-300 hover:scale-105 shadow-lg"
+                  className="bg-primary hover:bg-blue-700 text-white px-8 py-6 text-md font-medium rounded-full transition-all duration-300 hover:scale-105 shadow-lg"
                 >
                   Book your scan
                   <Calendar className="w-5 h-5 mr-2" />
