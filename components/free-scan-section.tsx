@@ -37,7 +37,7 @@ export function FreeScanSection() {
 
         {/* Styku Dashboard Image */}
         <div className="max-w-5xl mx-auto">
-            <div className="bg-white rounded-2xl p-6 shadow-xl">
+            <div className="bg-white rounded-2xl p-6">
                 <Image
                 src="/images/3D_gif.gif"
                 width={1200}

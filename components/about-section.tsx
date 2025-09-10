@@ -2,12 +2,13 @@
 
 import { Button } from "@/components/ui/button"
 import { ChevronRight } from "lucide-react"
+import Image from "next/image";
 import Link from "next/link"
 
 export function AboutSection() {
   return (
     <section className="py-16 lg:py-24 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Content */}
           <div className="bg-blue-500 rounded-3xl p-8 lg:p-12 text-white relative overflow-hidden">
@@ -51,20 +52,18 @@ export function AboutSection() {
             </div>
           </div>
           
-          {/* Image */}
-          <div className="relative">
-            <div className="relative rounded-3xl overflow-hidden shadow-xl">
-              <video
-                src="/images/woman_jogging.mp4"
-                width={600}
-                height={700}
-                className="object-cover w-full h-[500px] lg:h-[600px]"
-                autoPlay
-                loop
-                muted
-              />
-            </div>
+        {/* Image */}
+        <div className="relative">
+          <div className="relative rounded-3xl overflow-hidden">
+            <Image
+              src="/images/yemi-new.png"
+              alt="Medical professional at Great Heights Medical"
+              width={600}
+              height={700}
+              className="object-cover w-full h-[500px] lg:h-[600px]"
+            />
           </div>
+        </div>
         </div>
       </div>
     </section>

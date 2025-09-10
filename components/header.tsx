@@ -88,7 +88,7 @@ export function Header() {
       
       <div
         className={`
-          fixed top-16 left-1/2 transform -translate-x-1/2 bg-white shadow-xl z-50 rounded-lg transition-all duration-300 ease-in-out w-full max-w-md mx-4
+          fixed top-16 left-1/2 transform -translate-x-1/2 bg-white z-50 rounded-lg transition-all duration-300 ease-in-out w-full max-w-md mx-4
           ${isServicesDropdownOpen ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0 pointer-events-none"}
         `}
       >

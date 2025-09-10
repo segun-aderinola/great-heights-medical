@@ -18,7 +18,7 @@ export function HeroSection() {
       {/* Background Image */}
       <div className="absolute inset-0">
         <Image
-          src="/images/services_hero_bg.jpg"
+          src="/images/doctors2.png"
           alt="Medical professional"
           fill
           className="object-cover object-center"

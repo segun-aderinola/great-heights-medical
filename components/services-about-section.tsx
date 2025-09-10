@@ -6,7 +6,7 @@ import Link from "next/link"
 export function ServiceAboutSection() {
   return (
     <section className="py-16 lg:py-24 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Content */}
           <div className="bg-blue-500 rounded-3xl p-8 lg:p-12 text-white relative overflow-hidden">
@@ -22,7 +22,7 @@ export function ServiceAboutSection() {
               </h2>
               
               <p className="text-lg mb-6 leading-relaxed opacity-95">
-                The Styku 3D body scanner provides a quick and non-invasive method to scan your body within minutes. By capturing millions of data points and 600 infrared images, it precisely tracks, analyzes, and helps plan your health and wellness journey. With Styku, you can visualize your body's shape in 3D, along with a detailed body composition analysis
+                The Styku 3D body scanner provides a quick and non-invasive method to scan your body within minutes. By capturing millions of data points and 600 infrared images, it precisely tracks, analyzes, and helps plan your health and wellness journey. With Styku, you can visualize your body's shape in 3D, along with a detailed body composition analysis.
               </p>
               
               <p className="text-lg mb-8 leading-relaxed opacity-95">
@@ -47,15 +47,17 @@ export function ServiceAboutSection() {
             </div>
           </div>
           
-          {/* Image */}
+          {/* Video */}
           <div className="relative">
-            <div className="relative rounded-3xl overflow-hidden shadow-xl">
-              <Image
-                src="/images/yemi-new.png"
-                alt="Medical professional at Great Heights Medical"
+            <div className="relative rounded-3xl overflow-hidden ">
+              <video
+                src="/images/woman_jogging.mp4"
                 width={600}
                 height={700}
                 className="object-cover w-full h-[500px] lg:h-[600px]"
+                autoPlay
+                loop
+                muted
               />
             </div>
           </div>

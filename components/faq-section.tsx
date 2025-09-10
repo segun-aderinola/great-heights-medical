@@ -50,7 +50,7 @@ export function FAQSection() {
         </div>
 
         {/* FAQ Items */}
-        <div className="space-y-4">
+        <div className="space-y-2">
           {faqs.map((faq, index) => (
             <div 
               key={index} 
@@ -58,9 +58,9 @@ export function FAQSection() {
             >
               <button
                 onClick={() => toggleItem(index)}
-                className="w-full px-8 py-6 text-left flex items-center justify-between focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-inset"
+                className="w-full px-8 py-4 text-left flex items-center justify-between focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-inset"
               >
-                <h3 className="text-lg lg:text-xl text-gray-900 pr-8">
+                <h3 className="text-md lg:text-lg text-gray-900 pr-8">
                   {faq.question}
                 </h3>
                 <div className="flex-shrink-0">
@@ -78,7 +78,7 @@ export function FAQSection() {
               
               {openItems.includes(index) && (
                 <div className="px-8 pb-6">
-                  <div className="pt-2 border-t border-gray-100">
+                  <div className="border-t border-gray-100">
                     <p className="text-gray-600 leading-relaxed mt-4">
                       {faq.answer}
                     </p>

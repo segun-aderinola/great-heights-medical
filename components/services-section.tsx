@@ -55,7 +55,7 @@ export function ServicesSection() {
         </div>
 
         {/* Services Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-3">
           {services.map((service, index) => {
             const IconComponent = service.icon
             const ButtonIconComponent = service.buttonIcon
