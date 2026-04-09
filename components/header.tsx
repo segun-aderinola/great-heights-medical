@@ -1,218 +1,112 @@
 "use client"
 
-import { Button } from "@/components/ui/button"
-import { ChevronDown, Phone, Menu, X, ChevronRight } from "lucide-react"
+import { Phone, Menu, X } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 import { useState } from "react"
 
+const navLinks = [
+  { name: "Home", href: "/" },
+  { name: "Athletes", href: "/athletes" },
+  { name: "Weight Loss", href: "/weight-loss" },
+  { name: "3D Body Scan", href: "/3d-body-scan" },
+  { name: "Hepatitis C Treatment", href: "/hepatitis-c" },
+  { name: "Immigration", href: "/immigration" },
+]
+
 export function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
-  const [isServicesDropdownOpen, setIsServicesDropdownOpen] = useState(false)
-
-  const toggleMobileMenu = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen)
-  }
-
-  const closeMobileMenu = () => {
-    setIsMobileMenuOpen(false)
-  }
-
-  const toggleServicesDropdown = () => {
-    setIsServicesDropdownOpen(!isServicesDropdownOpen)
-  }
-
-  const closeServicesDropdown = () => {
-    setIsServicesDropdownOpen(false)
-  }
 
   return (
-    <header className="bg-white shadow-sm fixed top-0 left-0 right-0 z-50">
+    <header className="bg-white fixed top-0 left-0 right-0 z-50 border-b border-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
+        <div className="flex justify-between items-center h-16 lg:h-20">
           {/* Logo */}
-          <div className="flex items-center">
-            <Link href={`/`}>
-              <Image 
-                src="/logo.png" 
-                alt="GreatHeight" 
-                width={100} 
-                height={100}
-                className="h-20"
-              />
-            </Link>
-          </div>
+          <Link href="/" className="flex items-center shrink-0">
+            <Image
+              src="/logo.png"
+              alt="Great Heights Medical"
+              width={120}
+              height={48}
+              className="h-12 w-auto object-contain"
+              priority
+            />
+          </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex space-x-8">
-            <Link href="/" className="text-gray-700 hover:text-primary text-body-text transition-colors">
-              Home
-            </Link>
-            <Link href="/about" className="text-gray-700 hover:text-primary text-body-text transition-colors">
-              About Us
-            </Link>
-            <Link href="/services" className="text-gray-700 hover:text-primary text-body-text transition-colors">
-              Services
-            </Link>
-            {/* <Link href="#" className="text-gray-700 hover:text-primary text-body-text transition-colors">
-              Faqs
-            </Link> */}
+          <nav className="hidden lg:flex items-center gap-6 xl:gap-8">
+            {navLinks.map((link) => (
+              <Link
+                key={link.name}
+                href={link.href}
+                className="font-outfit text-sm text-gray-800 hover:text-primary transition-colors duration-200 whitespace-nowrap"
+              >
+                {link.name}
+              </Link>
+            ))}
           </nav>
 
-          {/* Desktop Right Side */}
-          <div className="hidden md:flex items-center space-x-4">
-            <span className="text-gray-600 text-body-text">Hours: Mon-Fri, 9 AM – 6 PM</span>
-            <Link href="https://calendly.com/great-heights-info/30min">
-              <Button className="bg-primary hover:bg-primary/90 text-white transition-colors rounded-full">
-                Contact Us
-                <Phone className="w-4 h-4 mr-2" />
-              </Button>
+          {/* Book Now Button */}
+          <div className="hidden lg:flex items-center">
+            <Link
+              href="https://calendly.com/great-heights-info/30min"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 bg-gray-900 hover:bg-gray-800 text-white text-sm font-medium px-5 py-2.5 rounded-full transition-all duration-200"
+            >
+              Book Now
+              <span className="flex items-center justify-center w-7 h-7 bg-white/20 rounded-full">
+                <Phone className="w-3.5 h-3.5" />
+              </span>
             </Link>
           </div>
 
-          {/* Mobile Menu Button */}
-          <div className="md:hidden flex items-center space-x-2">
-            <Button className="bg-primary hover:bg-primary/90 text-white p-2">
-              <Phone className="w-4 h-4" />
-            </Button>
-            <button
-              onClick={toggleMobileMenu}
-              className="text-gray-700 hover:text-primary p-2 transition-colors"
-              aria-label="Toggle mobile menu"
-            >
-              {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-            </button>
-          </div>
+          {/* Mobile menu button */}
+          <button
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            className="lg:hidden p-2 text-gray-700 hover:text-primary transition-colors"
+            aria-label="Toggle menu"
+          >
+            {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          </button>
         </div>
       </div>
-      
-      <div
-        className={`
-          fixed top-16 left-1/2 transform -translate-x-1/2 bg-white z-50 rounded-lg transition-all duration-300 ease-in-out w-full max-w-md mx-4
-          ${isServicesDropdownOpen ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0 pointer-events-none"}
-        `}
-      >
-        <div className="px-6 py-8">
-          <div className="grid grid-cols-1">
-            {/* Weight Loss & Body Composition */}
-            <div className="bg-gray-50 rounded-lg p-6 hover:bg-gray-100 transition-colors">
-              <div className="flex items-center mb-4">
-                <div className="bg-primary text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-semibold mr-3">
-                  1
-                </div>
-                <h3 className="text-lg font-semibold text-gray-900">Weight Loss & Body Composition</h3>
-              </div>
-              <p className="text-gray-600 mb-4">
-                Discover a smarter way to manage your body goals. Our Styku 3D Body Scanner captures a 360° image of your body in seconds, providing accurate metrics.
-              </p>
-              <Button className="bg-primary hover:bg-primary/90 text-white px-4 md:px-6 py-3 rounded-full transition-all duration-300 hover:scale-105 shadow-lg text-md" 
-              onClick={closeServicesDropdown}
-              >
-                <span>Schedule Your Scan</span>
-                <ChevronRight className="w-4 h-4" />
-              </Button>
-            </div>
-
-            {/* Immigration Medical Exams */}
-            <div className="bg-gray-50 rounded-lg p-6 hover:bg-gray-100 transition-colors">
-              <div className="flex items-center mb-4">
-                <div className="bg-primary text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-semibold mr-3">
-                  2
-                </div>
-                <h3 className="text-lg font-semibold text-gray-900">Immigration Medical Exams</h3>
-              </div>
-              <p className="text-gray-600 mb-4">
-                We are proud to be a USCIS-designated civil surgeon, offering Immigration Medical Exams in accordance with federal guidelines. Our streamlined process ensures efficiency.
-              </p>
-
-              <Link href="https://calendly.com/great-heights-info/30min">
-                <Button 
-                  className="bg-primary hover:bg-primary text-white rounded-full"
-                  onClick={closeServicesDropdown}
-                >
-                  Book Immigration Exam
-                  <ChevronRight className="w-4 h-4" />
-                </Button>
-              </Link>
-            </div>
-
-            {/* Drug Treatment & Recovery Support */}
-            <div className="bg-gray-50 rounded-lg p-6 hover:bg-gray-100 transition-colors">
-              <div className="flex items-center mb-4">
-                <div className="bg-primary text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-semibold mr-3">
-                  3
-                </div>
-                <h3 className="text-lg font-semibold text-gray-900">Drug Treatment & Recovery Support</h3>
-              </div>
-              <p className="text-gray-600 mb-4">
-                At Great Heights Medical, we believe that recovery is possible with the right guidance, structure, and medical support for your journey.
-              </p>
-              <Button 
-                className="bg-primary hover:bg-primary text-white rounded-full"
-                onClick={closeServicesDropdown}
-              >
-                Start Your Recovery Journey
-                <ChevronRight className="w-4 h-4" />
-              </Button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Mobile Menu Overlay */}
-      {isMobileMenuOpen && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 z-40 md:hidden" onClick={closeMobileMenu} />
-      )}
 
       {/* Mobile Menu */}
-      <div
-        className={`
-          md:hidden fixed top-16 left-0 right-0 bg-white shadow-lg z-50 transform transition-all duration-300 ease-in-out
-          ${isMobileMenuOpen ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0 pointer-events-none"}
-        `}
-      >
-        <nav className="px-4 py-6 space-y-4">
-          <Link
-            href="/"
-            className="block text-gray-700 hover:text-primary text-body-text py-2 transition-colors"
-            onClick={closeMobileMenu}
-          >
-            Home
-          </Link>
-          <Link
-            href="/about"
-            className="block text-gray-700 hover:text-primary text-body-text py-2 transition-colors"
-            onClick={closeMobileMenu}
-          >
-            About Us
-          </Link>
-          <Link
-            href="/services"
-            className="block text-gray-700 hover:text-primary text-body-text py-2 transition-colors"
-            onClick={closeMobileMenu}
-          >
-            Services
-          </Link>
-          {/* <Link
-            href="#"
-            className="block text-gray-700 hover:text-primary text-body-text py-2 transition-colors"
-            onClick={closeMobileMenu}
-          >
-            Faqs
-          </Link> */}
-          <div className="pt-4 border-t border-gray-200">
-            <Link href="https://calendly.com/great-heights-info/30min">
-              <Button
-                className="w-full bg-primary hover:bg-primary/90 text-white transition-colors"
-                onClick={closeMobileMenu}
-              >
-                <Phone className="w-4 h-4 mr-2" />
-                Contact Us
-              </Button>
-            </Link>
+      {isMobileMenuOpen && (
+        <>
+          <div
+            className="fixed inset-0 bg-black/40 z-40 lg:hidden"
+            onClick={() => setIsMobileMenuOpen(false)}
+          />
+          <div className="lg:hidden fixed top-16 left-0 right-0 bg-white shadow-xl z-50 rounded-b-2xl overflow-hidden">
+            <nav className="px-4 py-6 flex flex-col gap-1">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.name}
+                  href={link.href}
+                  className="text-gray-800 hover:text-primary py-3 px-3 rounded-xl hover:bg-gray-50 text-sm font-medium transition-colors"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  {link.name}
+                </Link>
+              ))}
+              <div className="pt-4 mt-2 border-t border-gray-100">
+                <Link
+                  href="https://calendly.com/great-heights-info/30min"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-2 bg-gray-900 text-white text-sm font-medium px-5 py-3 rounded-full w-full"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  <Phone className="w-4 h-4" />
+                  Book Now
+                </Link>
+              </div>
+            </nav>
           </div>
-        </nav>
-      </div>
+        </>
+      )}
     </header>
   )
 }

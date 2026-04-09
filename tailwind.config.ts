@@ -21,7 +21,7 @@ const config: Config = {
           DEFAULT: "hsl(var(--popover))",
           foreground: "hsl(var(--popover-foreground))",
         },
-        primary: "#3B82F6",
+        primary: "#2199F7",
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
           foreground: "hsl(var(--secondary-foreground))",
@@ -58,46 +58,49 @@ const config: Config = {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
-        "footer-bg": "#101828",
+        brand: "#2199F7",
       },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
+        "4xl": "2rem",
+        "5xl": "2.5rem",
+        "6xl": "3rem",
       },
       keyframes: {
         "accordion-down": {
-          from: {
-            height: "0",
-          },
-          to: {
-            height: "var(--radix-accordion-content-height)",
-          },
+          from: { height: "0" },
+          to: { height: "var(--radix-accordion-content-height)" },
         },
         "accordion-up": {
-          from: {
-            height: "var(--radix-accordion-content-height)",
-          },
-          to: {
-            height: "0",
-          },
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: "0" },
+        },
+        float: {
+          "0%, 100%": { transform: "translateY(0px) rotate(-6deg)" },
+          "50%": { transform: "translateY(-10px) rotate(-6deg)" },
+        },
+        "float-alt": {
+          "0%, 100%": { transform: "translateY(0px) rotate(8deg)" },
+          "50%": { transform: "translateY(-12px) rotate(8deg)" },
+        },
+        "float-slow": {
+          "0%, 100%": { transform: "translateY(0px) rotate(3deg)" },
+          "50%": { transform: "translateY(-8px) rotate(3deg)" },
         },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        float: "float 3s ease-in-out infinite",
+        "float-alt": "float-alt 4s ease-in-out infinite",
+        "float-slow": "float-slow 5s ease-in-out infinite",
       },
       fontFamily: {
-        // Set Clash Display as the default sans font
-        sans: ["Clash Display", "sans-serif"],
-        // Keep Inter available as an alternative
-        inter: ["Inter", "sans-serif"],
-        // Keep clash available for explicit use
-        clash: ["Clash Display", "sans-serif"],
-      },
-      fontSize: {
-        "section-title": "20px",
-        "body-text": "14px",
+        sans: ["Outfit", "sans-serif"],
+        urbanist: ["Urbanist", "sans-serif"],
+        outfit: ["Outfit", "sans-serif"],
       },
     },
   },

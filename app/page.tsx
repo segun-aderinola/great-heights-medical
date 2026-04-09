@@ -1,24 +1,25 @@
-import { Header } from "@/components/header"
 import { HeroSection } from "@/components/hero-section"
 import { StatsSection } from "@/components/stats-section"
-import { AboutSection } from "@/components/about-section"
-import { ServicesSection } from "@/components/services-section"
-import { ProcessSection } from "@/components/process-section"
-import { CoreValuesSection } from "@/components/core-values-section"
-import {CTASection} from "@/components/cta-section"
-import { Footer } from "@/components/footer"
-import { Styku3DSection } from "@/components/styku-3d-section"
-import { FAQSection } from "@/components/faq-section"
+import { ServiceCardsSection } from "@/components/service-cards-section"
+import { WhatMakesUsDifferentSection } from "@/components/what-makes-us-different-section"
+import { BodyScanTechnologySection } from "@/components/body-scan-technology-section"
+import { WhyChooseSection } from "@/components/why-choose-section"
+import { MedicalWeightLossSection } from "@/components/medical-weight-loss-section"
+import { ImmigrationSection } from "@/components/immigration-section"
+import { CTASection } from "@/components/cta-section"
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen bg-white">
+    <main className="min-h-screen bg-white pt-16 lg:pt-20">
       <HeroSection />
       <StatsSection />
-      <AboutSection />
-      <ServicesSection />
-      <Styku3DSection />
-      <FAQSection />
-    </div>
+      <ServiceCardsSection />
+      <WhatMakesUsDifferentSection />
+      <BodyScanTechnologySection />
+      <WhyChooseSection />
+      <MedicalWeightLossSection />
+      <ImmigrationSection />
+      <CTASection />
+    </main>
   )
 }
